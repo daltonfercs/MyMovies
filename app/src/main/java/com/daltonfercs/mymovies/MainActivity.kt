@@ -4,6 +4,7 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import com.daltonfercs.mymovies.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +14,11 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.message.text    =   "Hello Dalton..."
+        binding.showButton.setOnClickListener{
+            val message = binding.messege.text
+            Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        }
+
+
     }
 }
